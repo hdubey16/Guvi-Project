@@ -1,0 +1,133 @@
+/* =====================================================
+   GUVI — Register Page Styles
+   ===================================================== */
+
+/* Override auth brand for register page — GUVI dark + green */
+.register-page .auth-brand {
+    background: linear-gradient(160deg, #212121 0%, #2D2D2D 50%, #333333 100%);
+}
+
+/* Floating decoration */
+.register-page .auth-brand .decor-ring {
+    position: absolute;
+    border: 2px solid rgba(0,200,83,0.15);
+    border-radius: 50%;
+    animation: floatBlob 20s ease-in-out infinite;
+}
+.register-page .decor-ring-1 {
+    width: 250px;
+    height: 250px;
+    top: 5%;
+    right: -50px;
+}
+.register-page .decor-ring-2 {
+    width: 180px;
+    height: 180px;
+    bottom: 15%;
+    left: -40px;
+    animation-delay: 5s;
+}
+.register-page .decor-ring-3 {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    right: 30%;
+    animation-delay: 10s;
+}
+
+/* Step indicator */
+.auth-step-indicator {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+}
+.auth-step-indicator .step {
+    width: 48px;
+    height: 4px;
+    background: rgba(255,255,255,0.15);
+    border-radius: var(--radius-full);
+}
+.auth-step-indicator .step.active {
+    background: var(--primary-light);
+}
+
+/* Validation icon inside inputs */
+.form-control.is-valid ~ .validation-icon,
+.form-control.is-invalid ~ .validation-icon {
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    animation: fadeIn 0.25s;
+}
+.form-control.is-valid ~ .validation-icon { color: var(--success); }
+.form-control.is-invalid ~ .validation-icon { color: var(--error); }
+
+/* Password requirements list */
+.password-reqs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem;
+    margin-top: 0.6rem;
+}
+.password-reqs .req {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    transition: color 0.2s;
+}
+.password-reqs .req.met {
+    color: var(--success);
+}
+.password-reqs .req i {
+    font-size: 0.7rem;
+    width: 14px;
+    text-align: center;
+}
+
+/* Terms text */
+.terms-text {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    text-align: center;
+    margin-top: 1rem;
+}
+.terms-text a {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Form animation */
+.register-form .form-group {
+    animation: fadeInUp 0.5s var(--ease-out) both;
+}
+.register-form .form-group:nth-child(1) { animation-delay: 0.05s; }
+.register-form .form-group:nth-child(2) { animation-delay: 0.12s; }
+.register-form .form-group:nth-child(3) { animation-delay: 0.19s; }
+.register-form .form-group:nth-child(4) { animation-delay: 0.26s; }
+
+/* Brand heading */
+.register-page .auth-brand h1 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+}
+
+/* Submit button animation */
+.register-form .btn-block {
+    animation: fadeInUp 0.5s var(--ease-out) 0.33s both;
+}
+.register-form .terms-text {
+    animation: fadeIn 0.5s var(--ease-out) 0.4s both;
+}
+
+@media (max-width: 992px) {
+    .register-page .auth-form-panel {
+        background: linear-gradient(180deg, #E8F5E9 0%, var(--white) 30%);
+    }
+    .password-reqs {
+        grid-template-columns: 1fr;
+    }
+}

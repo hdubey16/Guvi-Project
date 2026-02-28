@@ -1,0 +1,19 @@
+# Dependencies
+php/vendor/
+node_modules/
+
+# OS files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Deploy artifacts
+deploy/
+*.zip
+
+# Logs
+*.log

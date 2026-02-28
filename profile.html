@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile — GUVI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/Logo%20tab.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="guvi-navbar scrolled" id="navbar" style="background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color:var(--gray-900)">
+                <img src="assets/logo%20guvi%20frame.webp" alt="GUVI Logo" class="brand-logo">
+            </a>
+            <button class="nav-toggle" id="navToggle" style="color:var(--gray-900)"><i class="bi bi-list"></i></button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" style="color:var(--gray-600)">Home</a>
+                <a href="profile.html" class="nav-link active" style="color:var(--gray-900)">Profile</a>
+                <a href="#" class="nav-link btn-nav" id="navLogout"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Page -->
+    <div class="profile-page">
+        <div class="profile-container">
+
+            <!-- Profile Header -->
+            <div class="profile-header" id="profileHeader">
+                <div class="profile-header-inner">
+                    <div class="avatar-wrapper">
+                        <div class="avatar avatar-lg" id="avatar">?</div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                    <div class="profile-header-info">
+                        <h2 id="displayName" style="font-family:'Space Grotesk',sans-serif;">Loading...</h2>
+                        <p id="displayEmail">—</p>
+                        <div class="profile-header-badge">
+                            <i class="bi bi-patch-check-fill"></i> Verified Account
+                        </div>
+                    </div>
+                    <div class="profile-completion" id="completionRing">
+                        <svg width="52" height="52" viewBox="0 0 40 40">
+                            <circle class="bg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="0"></circle>
+                            <circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+                        </svg>
+                        <span class="pct">0%</span>
+                        <span class="ring-label">Complete</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Form Card -->
+            <div class="profile-form-card">
+                <form id="profileForm" novalidate>
+
+                    <!-- Account Section -->
+                    <div class="section-label">
+                        <i class="bi bi-person-circle"></i> Account Information
+                    </div>
+                    <div class="profile-fields-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" class="form-control field-readonly" id="email" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="fullName">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="full_name" placeholder="Enter your full name">
+                        </div>
+                    </div>
+
+                    <!-- Personal Details Section -->
+                    <div class="section-label" style="margin-top:2rem;">
+                        <i class="bi bi-card-list"></i> Personal Details
+                    </div>
+                    <div class="profile-fields-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="age">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" placeholder="e.g. 25" min="1" max="150">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="dob">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob" name="dob">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact">Contact Number</label>
+                            <input type="tel" class="form-control" id="contact" name="contact" placeholder="9876543210" maxlength="10">
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label" for="address">Address</label>
+                            <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter your address" style="resize:vertical;"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="profile-actions">
+                        <button type="button" class="btn-logout" id="logoutBtn">
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </button>
+                        <div class="profile-actions-right">
+                            <span class="last-saved" id="lastSaved"><i class="bi bi-clock"></i> Not saved yet</span>
+                            <button type="submit" class="btn btn-primary btn-lg btn-glow" id="saveBtn">
+                                <span class="btn-text"><i class="bi bi-check2-circle"></i> Save Changes</span>
+                                <span class="spinner" style="display:none;"></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

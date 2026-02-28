@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — GUVI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/Logo%20tab.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="guvi-navbar scrolled" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color:var(--gray-900)">
+                <img src="assets/logo%20guvi%20frame.webp" alt="GUVI Logo" class="brand-logo">
+            </a>
+            <button class="nav-toggle" id="navToggle" style="color:var(--gray-900)"><i class="bi bi-list"></i></button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" style="color:var(--gray-600)">Home</a>
+                <a href="register.html" class="nav-link active" style="color:var(--gray-900)">Register</a>
+                <a href="login.html" class="nav-link btn-nav">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Layout -->
+    <div class="auth-page register-page">
+
+        <!-- Brand Panel (Left) -->
+        <div class="auth-brand">
+            <div class="decor-ring decor-ring-1"></div>
+            <div class="decor-ring decor-ring-2"></div>
+            <div class="decor-ring decor-ring-3"></div>
+            <div class="auth-brand-content">
+                <div class="section-badge" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.1);">
+                    <i class="bi bi-person-plus-fill"></i> New Account
+                </div>
+                <h1 style="font-family:'Space Grotesk',sans-serif;">Join GUVI<br>Today.</h1>
+                <p>Create your account and start managing your profile with our secure, modern platform.</p>
+                <div class="brand-trust">
+                    <div class="trust-stat"><span>256-bit</span> Encryption</div>
+                    <div class="trust-stat"><span>10k+</span> Users</div>
+                </div>
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <i class="bi bi-shield-check"></i>
+                        <span>Bcrypt password encryption</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="bi bi-database-check"></i>
+                        <span>Multi-database architecture</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Redis-powered sessions</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="bi bi-phone"></i>
+                        <span>Responsive on all devices</span>
+                    </div>
+                </div>
+                <div class="auth-step-indicator">
+                    <div class="step active"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Panel (Right) -->
+        <div class="auth-form-panel">
+            <div class="auth-form-wrapper">
+                <h2 style="font-family:'Space Grotesk',sans-serif;">Create Account</h2>
+                <p class="lead">Fill in the details below to get started.</p>
+                <div class="form-progress-bar">
+                    <div class="form-progress-fill" id="formProgress"></div>
+                </div>
+
+                <form id="registerForm" class="register-form" novalidate>
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label class="form-label" for="email">
+                            <i class="bi bi-envelope" style="margin-right:4px;"></i> Email Address
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        <div class="form-hint" id="emailHint"></div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label class="form-label" for="password">
+                            <i class="bi bi-lock" style="margin-right:4px;"></i> Password
+                        </label>
+                        <div class="input-icon-wrapper">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Create a strong password" autocomplete="new-password" required>
+                            <button type="button" class="toggle-btn" data-target="password" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
+                        <div class="strength-meter"><div class="bar" id="strengthBar"></div></div>
+                        <div class="strength-text" id="strengthText"></div>
+                        <div class="password-reqs" id="passwordReqs">
+                            <div class="req" data-req="length"><i class="bi bi-circle"></i> 8+ characters</div>
+                            <div class="req" data-req="upper"><i class="bi bi-circle"></i> Uppercase</div>
+                            <div class="req" data-req="lower"><i class="bi bi-circle"></i> Lowercase</div>
+                            <div class="req" data-req="number"><i class="bi bi-circle"></i> Number</div>
+                            <div class="req" data-req="special"><i class="bi bi-circle"></i> Special char</div>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label class="form-label" for="confirmPassword">
+                            <i class="bi bi-lock-fill" style="margin-right:4px;"></i> Confirm Password
+                        </label>
+                        <div class="input-icon-wrapper">
+                            <input type="password" class="form-control" id="confirmPassword" name="confirm_password" placeholder="Re-enter your password" autocomplete="new-password" required>
+                            <button type="button" class="toggle-btn" data-target="confirmPassword" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
+                        <div class="form-hint" id="confirmHint"></div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-glow" id="submitBtn">
+                        <span class="btn-text"><i class="bi bi-rocket-takeoff"></i> Create Account</span>
+                        <span class="spinner" style="display:none;"></span>
+                    </button>
+
+                    <p class="terms-text">
+                        By registering, you agree to our
+                        <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                    </p>
+                </form>
+
+                <div class="auth-footer">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

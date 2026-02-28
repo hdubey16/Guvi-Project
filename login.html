@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — GUVI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/Logo%20tab.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="guvi-navbar scrolled" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color:var(--gray-900)">
+                <img src="assets/logo%20guvi%20frame.webp" alt="GUVI Logo" class="brand-logo">
+            </a>
+            <button class="nav-toggle" id="navToggle" style="color:var(--gray-900)"><i class="bi bi-list"></i></button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" style="color:var(--gray-600)">Home</a>
+                <a href="register.html" class="nav-link" style="color:var(--gray-600)">Register</a>
+                <a href="login.html" class="nav-link btn-nav">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Layout -->
+    <div class="auth-page login-page">
+
+        <!-- Brand Panel (Left) -->
+        <div class="auth-brand">
+            <div class="floating-shapes">
+                <div class="shape blob-1"></div>
+                <div class="shape blob-2"></div>
+            </div>
+            <div class="auth-brand-content">
+                <div class="login-hero-icon">
+                    <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <h1 style="font-family:'Space Grotesk',sans-serif;">Welcome<br>Back.</h1>
+                <p>Sign in to access your dashboard, manage your profile, and stay connected with GUVI.</p>
+                <div class="brand-trust">
+                    <div class="trust-stat"><span>24hr</span> Sessions</div>
+                    <div class="trust-stat"><span>0ms</span> Latency</div>
+                </div>
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <i class="bi bi-lightning-charge"></i>
+                        <span>Instant authentication</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="bi bi-clock-history"></i>
+                        <span>24-hour secure sessions</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="bi bi-fingerprint"></i>
+                        <span>Token-based security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Panel (Right) -->
+        <div class="auth-form-panel">
+            <div class="auth-form-wrapper">
+                <h2 style="font-family:'Space Grotesk',sans-serif;">Sign In</h2>
+                <p class="lead">Enter your credentials to continue.</p>
+
+                <form id="loginForm" class="login-form" novalidate>
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label class="form-label" for="email">
+                            <i class="bi bi-envelope" style="margin-right:4px;"></i> Email Address
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        <div class="form-hint" id="emailHint"></div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label class="form-label" for="password">
+                            <i class="bi bi-lock" style="margin-right:4px;"></i> Password
+                        </label>
+                        <div class="input-icon-wrapper">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+                            <button type="button" class="toggle-btn" data-target="password" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remember / Forgot -->
+                    <div class="remember-group">
+                        <label>
+                            <input type="checkbox" id="rememberMe"> Remember me
+                        </label>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-glow" id="submitBtn">
+                        <span class="btn-text"><i class="bi bi-arrow-right-circle"></i> Sign In</span>
+                        <span class="spinner" style="display:none;"></span>
+                    </button>
+
+                    <div class="secure-note">
+                        <i class="bi bi-shield-lock"></i> Protected by 256-bit encryption
+                    </div>
+                </form>
+
+                <div class="auth-footer">
+                    Don't have an account? <a href="register.html">Create one</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* =====================================================
+   GUVI — Login Page Styles
+   ===================================================== */
+
+/* Override auth brand for login page — GUVI dark charcoal */
+.login-page .auth-brand {
+    background: linear-gradient(160deg, #212121 0%, #2D2D2D 50%, #333333 100%);
+}
+
+/* Animated grid lines in brand panel */
+.login-page .auth-brand::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridMove 20s linear infinite;
+}
+@keyframes gridMove {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+/* Lock icon hero on brand panel */
+.login-hero-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-2xl);
+    background: rgba(0,200,83,0.1);
+    border: 1px solid rgba(0,200,83,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--primary-light);
+    margin-bottom: 2rem;
+    animation: pulse-ring 3s ease-in-out infinite;
+}
+
+/* Remember me checkbox custom */
+.remember-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.remember-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    cursor: pointer;
+    user-select: none;
+}
+.remember-group label input[type="checkbox"] {
+    accent-color: var(--primary);
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.remember-group .forgot-link {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+.remember-group .forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Divider */
+.form-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    color: var(--gray-400);
+    font-size: 0.8rem;
+}
+.form-divider::before,
+.form-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray-200);
+}
+
+/* Quick login alternative */
+.quick-login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.quick-login-options .btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+.quick-login-options .btn-social:hover {
+    border-color: var(--gray-300);
+    background: var(--gray-50);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Floating blobs on brand panel */
+.login-page .blob-1 {
+    width: 200px;
+    height: 200px;
+    background: rgba(0,200,83,0.08);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    top: 10%;
+    right: -30px;
+}
+.login-page .blob-2 {
+    width: 160px;
+    height: 160px;
+    background: rgba(0,230,118,0.06);
+    border-radius: 60% 40% 30% 70% / 50% 40% 60% 50%;
+    bottom: 15%;
+    left: -20px;
+    animation-delay: 7s;
+}
+
+/* Form entry animation */
+.login-form .form-group {
+    animation: fadeInUp 0.4s var(--ease-out) both;
+}
+.login-form .form-group:nth-child(1) { animation-delay: 0.05s; }
+.login-form .form-group:nth-child(2) { animation-delay: 0.12s; }
+.login-form .form-group:nth-child(3) { animation-delay: 0.19s; }
+
+/* Brand heading */
+.login-page .auth-brand h1 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+}
+
+/* Login hero icon pulse */
+.login-hero-icon {
+    position: relative;
+}
+.login-hero-icon::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: inherit;
+    border: 2px solid rgba(0,200,83,0.15);
+    animation: pulse-ring 3s ease-in-out infinite;
+}
+
+/* Submit button animation */
+.login-form .btn-block {
+    animation: fadeInUp 0.4s var(--ease-out) 0.26s both;
+}
+
+@media (max-width: 992px) {
+    .login-page .auth-form-panel {
+        background: linear-gradient(180deg, #E8F5E9 0%, var(--white) 30%);
+    }
+}
