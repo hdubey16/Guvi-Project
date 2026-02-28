@@ -471,6 +471,7 @@ h4 { font-size: 1.25rem; }
 .auth-page {
     min-height: 100vh;
     display: flex;
+    padding-top: 70px;
 }
 .auth-brand {
     flex: 0 0 42%;
@@ -547,10 +548,11 @@ h4 { font-size: 1.25rem; }
 .auth-form-panel {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 2rem;
     background: var(--white);
+    overflow-y: auto;
 }
 .auth-form-wrapper {
     width: 100%;
