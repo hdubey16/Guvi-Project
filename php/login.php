@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(200); exit();
 
 define('MYSQL_HOST', '127.0.0.1');
 define('MYSQL_PORT', 3306);
-define('MYSQL_USER', 'root');
-define('MYSQL_PASS', '');
+define('MYSQL_USER', 'guvi_app');
+define('MYSQL_PASS', 'guvi_secure_2024');
 define('MYSQL_DB',   'guvi_users');
 define('REDIS_HOST', '127.0.0.1');
 define('REDIS_PORT', 6379);
